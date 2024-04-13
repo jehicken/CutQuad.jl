@@ -5,6 +5,8 @@ if !isdefined(AlgoimDiff_jll, :libcutquad_path)
     error("Sorry!  AlgoimDiff_jll is not available on this platform")
 end
 @wrapmodule(libcutquad)
+# The following @wrapmodule is for CxxWrap@0.14.0 and above 
+# @wrapmodule(AlgoimDiff_jll.get_libcutquad_path)
 __init__() = @initcxx
 
 
