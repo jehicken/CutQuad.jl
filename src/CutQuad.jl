@@ -9,10 +9,6 @@ end
 # @wrapmodule(AlgoimDiff_jll.get_libcutquad_path)
 __init__() = @initcxx
 
-# using RegionTrees, CxxWrap
-# @wrapmodule(joinpath("/home/jehicken/Libraries/algoim","libcutquad"))
-# __init__() = @initcxx 
-
 # Module variable used to store a reference to the levset;
 # this is needed for the @safe_cfunction macro
 const mod_levset = Ref{Any}()
