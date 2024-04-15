@@ -1,5 +1,4 @@
 # CutQuad
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://jehicken.github.io/CutQuad.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://jehicken.github.io/CutQuad.jl/dev/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://jehicken.github.io/CutQuad.jl/)
 [![Build Status](https://github.com/jehicken/CutQuad.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/jehicken/CutQuad.jl/actions/workflows/CI.yml?query=branch%3Amain)

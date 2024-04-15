@@ -1,12 +1,16 @@
 module CutQuad
 
-using RegionTrees, CxxWrap, AlgoimDiff_jll
+using RegionTrees, CxxWrap
+
+using AlgoimDiff_jll
 if !isdefined(AlgoimDiff_jll, :libcutquad_path)
     error("Sorry!  AlgoimDiff_jll is not available on this platform")
 end
-@wrapmodule(libcutquad)
-# The following @wrapmodule is for CxxWrap@0.14.0 and above 
-# @wrapmodule(AlgoimDiff_jll.get_libcutquad_path)
+@wrapmodule(AlgoimDiff_jll.get_libcutquad_path)
+
+# Following is for local testing of the cutquad library
+# @wrapmodule(() -> joinpath("/home/jehicken/Libraries/algoim","libcutquad.so"))
+
 __init__() = @initcxx
 
 # Module variable used to store a reference to the levset;
@@ -20,6 +24,8 @@ Returns a volume quadrature for the domain defined by the HyperRectangle `rect`
 and level-set function `phi`.  The canonical quadrature on a non-cut domain
 (i.e. `phi(x) > 0` for all `x`) uses a tensor-product Gauss-Legendre quadrature 
 with `num_quad^dim` points total, where `dim` is the dimension of the domain.
+The `fit_degree` parameter indicates the degree of the Bernstein polynomial that
+the algoim library uses to represent the level-set function `phi`.  
 
 # Example
 ```julia-repl
@@ -87,7 +93,9 @@ Returns a surface quadrature for the surface defined by `phi(x)=0` over the
 HyperRectangle `rect`, where `phi` is a level-set function.  If the surface is, 
 for example, a plane parallel to one of the sides of `rect`, then we get a 
 tensor-product Gauss-Legendre quadrature with `num_quad^(dim-1)` points total, 
-where `dim` is the dimension of the domain.
+where `dim` is the dimension of the domain.  The `fit_degree` parameter 
+indicates the degree of the Bernstein polynomial that the algoim library uses 
+to represent the level-set function `phi`. 
 
 # Example
 ```julia-repl
