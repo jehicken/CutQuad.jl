@@ -219,6 +219,8 @@ function cut_surf_quad(cell::HyperRectangle{1,Float64}, phi,
                     Vector{Float64}(cell.origin),
                     Vector{Float64}(cell.origin + cell.widths),
                     xwork, surf_wts, surf_pts)
+    # TODO: normal direction is inconsistent between 1D and 2/3D
+    surf_wts .*= -1.0
     return reshape(surf_wts, 1, :), reshape(surf_pts, 1, :)
 end
 
