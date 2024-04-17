@@ -153,6 +153,10 @@ function cut_face_quad(face::HyperRectangle{Dim,Float64}, dir::Int, phi,
                         wts, pts)
     end
 
+    if length(wts) == 0
+        return wts, zeros(Dim, 0)
+    end
+
     # expand `Dim-1` dimensional points into `Dim` dimensional points
     pts2d = reshape(pts, Dim-1, :)
     pts_full = zeros(Dim, length(wts))
@@ -164,7 +168,7 @@ function cut_face_quad(face::HyperRectangle{Dim,Float64}, dir::Int, phi,
 end
 
 function cut_face_quad(face::HyperRectangle{1,Float64}, dir::Int, phi,
-                       num_quad::Int, fit_degree::Int=num_quad-1)
+                       num_quad::Int; fit_degree::Int=num_quad-1)
     @assert( num_quad > 0, "number of quadrature points must be positive." )
     @assert( fit_degree >= 0, "degree of polynomial fit must be non-negative." )
     xdir = face.origin[dir]
