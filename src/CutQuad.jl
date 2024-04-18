@@ -247,7 +247,7 @@ function cut_surf_quad(cell::HyperRectangle{3,Float64}, phi,
     xwork = zeros(3) # allocating here has insignificant impact, it seems
     mod_levset[] = phi
     cphi = @safe_cfunction( x -> mod_levset[](x), Float64, (Vector{Float64},))
-    cut_surf_quad2d(cphi, num_quad, fit_degree,
+    cut_surf_quad3d(cphi, num_quad, fit_degree,
                     Vector{Float64}(cell.origin),
                     Vector{Float64}(cell.origin + cell.widths),
                     xwork, surf_wts, surf_pts)
