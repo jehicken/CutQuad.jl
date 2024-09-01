@@ -12,6 +12,7 @@ RegionTrees = "dee08c22-ab7f-5625-9660-a9af2021b33f"
 julia = "1.6"
 AlgoimDiff_jll = "^1.1.0"
 CxxWrap = "=0.15"
+RegionTrees = "=0.3.2"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
