@@ -1,7 +1,7 @@
 name = "CutQuad"
 uuid = "b130fd59-4ea5-47f9-9e42-9608cf6d689d"
 authors = ["Jason Hicken <jason.hicken@gmail.com> and contributors"]
-version = "0.2.0"
+version = "0.3.0"
 
 [deps]
 AlgoimDiff_jll = "ce515d28-882f-5689-846d-f09a18d37b96"
