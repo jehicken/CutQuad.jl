@@ -31,7 +31,7 @@ the algoim library uses to represent the level-set function `phi`.
 ```julia-repl
 julia> using CutQuad, RegionTrees
 
-julia> using StaticArrays : SVector
+julia> using StaticArrays: SVector
 
 julia> phi = x-> 4*(x[1] + 1)^2 + 36*(x[2] - 0.5)^2 - 9;
 
@@ -102,7 +102,7 @@ that the algoim library uses to represent the level-set function `phi`.
 ```julia-repl
 julia> using CutQuad, RegionTrees
 
-julia> using StaticArrays : SVector
+julia> using StaticArrays: SVector
 
 julia> phi = x-> 4*(x[1] + 1)^2 + 36*(x[2] - 0.5)^2 - 9;
 
@@ -198,7 +198,7 @@ to represent the level-set function `phi`.
 ```julia-repl
 julia> using CutQuad, RegionTrees
 
-julia> using StaticArrays : SVector
+julia> using StaticArrays: SVector
 
 julia> phi = x-> 4*(x[1] + 1)^2 + 36*(x[2] - 0.5)^2 - 9;
 
